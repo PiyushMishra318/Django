@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>HOME</title>
+{% endblock %}
+{% block body %}
+<h1>WELCOME TO THE WEBSITE</h1>
+<form action="searchprofile" method="post">
+    <input type="text" class="form-control" placeholder="Profile Name" name="profilename" aria-label="Profile Name" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+    {% csrf_token %}
+</form>
+<h1>Profile</h1>
+<br>
+<p>Username:{{ search3.0 }}</p>
+<p>Profile Image: <img src="{{search3.1}}" style="width=100px;height=00px;"alt=""></p>
+{% endblock %}
