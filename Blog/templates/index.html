@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+{% if user.is_authenticated %}
+  <ul class="list-group">
+    {% for post in posts %}
+      <li class="list-group-item">
+        <h1><img src="{{post.profileimg}}" style="height:70px;width:85px">       {{ post.username }}</h1>
+        <p>{{ post.Body }}</p>
+        <p> on {{ post.Posted_on }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  <form  action="update" method="post">   
+    <label for="Post">Post:</label>
+    <textarea class="form-control" name="Body" rows="5" id="comment"></textarea><br>
+    <button class="btn btn-outline-secondary btn-lg" type="submit" id="button-addon2" style="margin:10px;">Submit</button>
+    {% csrf_token %}
+  </form>
+{% endif %}
+{% endblock %}

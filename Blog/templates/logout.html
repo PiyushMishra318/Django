@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block head %}
+  <title>Login</title>
+{% endblock %}
+{% block body %}
+  <h1>You have Succesfully Logged out</h1>
+  <form method="post">
+    <button class="btn btn-outline-secondary" href="login.html" type="submit" id="button-addon2"><a href="login">Login</a></button>
+    {% csrf_token %}
+  </form>
+{% endblock %}
