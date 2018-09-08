@@ -6,6 +6,10 @@ class StatusUpdate(forms.Form):
     Body = forms.CharField(label='Post')
     Posted_on = forms.DateField()
 
+class CommentForm(forms.Form):
+    text = forms.CharField()
+    Posted_on = forms.DateField()
+
 class RegistrationForm(UserCreationForm):
     class Meta:
         model=User

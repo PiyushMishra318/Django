@@ -3,19 +3,41 @@
 {% endblock %}
 {% block body %}
 {% if user.is_authenticated %}
-  <ul class="list-group">
+  <ul class="list-group" style=" ">
     {% for post in posts %}
-      <li class="list-group-item">
-        <h1><img src="{{post.profileimg}}" style="height:70px;width:85px">       {{ post.username }}</h1>
-        <p>{{ post.Body }}</p>
-        <p> on {{ post.Posted_on }}</p>
+      <li class="list-group-item" style=" ">
+        <h1><img src="{{post.profileimg}}" style="height:50px;width:50px;border-radius:50%; border: 2px solid white;margin-right:20px;">{{ post.Body }}</h1>
+        <div style="float:right; ">
+          <p>Posted By : {{ post.username }} | {{ post.Posted_on }} </p>
+        </div>
       </li>
+      <li class="list-group-item" style=" ">
+        <ul class="list-group" style=" ">
+          <h3>Comments:</h3>
+          {% for comment in comments %}
+          {% ifequal post.Body comment.body %}
+          <li class="list-group-item" style=" ">
+            <p><img src="{{ comment.profileimg }}" height=30px width=30px style="border-radius:50%;border: 2px solid white;">
+              {{comment.commentid}}  :  {{ comment.text }}</p>
+          </li>
+          {% endifequal %}
+          {% endfor %}
+          </ul>
+        </li>
+          <form action="comment" method="post">
+            <input type="hidden" name="Body" value="{{ post.Body }}">
+            <label for="comment" style="color:white;"><strong>Comment:</strong></label>
+            <textarea class="form-control" name="comment" rows="1"></textarea><br>
+            <button class="btn btn-primary btn-lg" type="submit" id="button-addon2" style="margin:10px;">Submit</button>
+            {% csrf_token %}
+          </form>
     {% endfor %}
   </ul>
-  <form  action="update" method="post">   
-    <label for="Post">Post:</label>
+
+  <form  action="update" method="post">
+    <label for="Post" style="color:white;"><strong>Post:</strong></label>
     <textarea class="form-control" name="Body" rows="5" id="comment"></textarea><br>
-    <button class="btn btn-outline-secondary btn-lg" type="submit" id="button-addon2" style="margin:10px;">Submit</button>
+    <button class="btn btn-primary btn-lg" type="submit" id="button-addon2" style="margin:10px;">Submit</button>
     {% csrf_token %}
   </form>
 {% endif %}

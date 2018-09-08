@@ -24,6 +24,7 @@ urlpatterns = [
     path('',views.login_redirect,name='login_redirect'),
     path('home',views.home,name='home'),
     path('update',views.update,name='update'),
+    path('comment',views.comment,name='comment'),
     path('login',login,{'template_name':'login.html'},name='login'),
     path('logout',logout,{'template_name':'logout.html'},name='logout'),
     path('register',views.register,name='register')
