@@ -24,6 +24,14 @@ nav a{
 .navcolor{
   color:white;
 }
+
+.home nav button{
+  background: inherit;
+  color:black;
+}
+.home nav a{
+  font-size: 17px;
+}
 .navbgcolor{
   background: linear-gradient(to right, #0066ff 0%, #99ccff 100%);
 }
@@ -49,4 +57,29 @@ nav a{
 }
 .col-lg-6 a{
   color:white;
+}
+.text-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+.contactform{
+  background: linear-gradient(to bottom, #ff6600 0%, #ffcc00 100%);
+}
+.contactform .row .col-sm-12 p{
+  margin-top:10px;
+  margin-left:25%;
+
+}
+.btn-primary{
+  margin-top:-5px;
+  margin-left:5px;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+.copyright{
+  margin-top:15px;
+  font-size:13px;
 }
