@@ -9,6 +9,6 @@ These are all the Djang projects I made to learn and improve in FullStack develo
   
 # What I Learned
 
-* Core Knowledge - ForeignKeys,ImageField in models. 
+* Core Knowledge - ForeignKeys, ImageField in models. 
 * Making a Small Scale Search Application.
 * Learned using JINJA2.
