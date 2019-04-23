@@ -1,5 +1,7 @@
 # Django
-* These are all the Djang projects I made to learn and improve in FullStack developing
+
+These are all the Djang projects I made to learn and improve in FullStack developing
+
   # BLOG
   * Just a simple Blog made using Django.
   # Profile search appplication
